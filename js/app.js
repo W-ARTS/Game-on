@@ -24,15 +24,14 @@ const TxtControl = document.querySelectorAll('.text-control');
 console.log(TxtControl);
 
 function VerifNbrChamps() {
-    if (TxtControl.value.length <= 3) {
+    if (TxtControl.value.length < 3) {
         TxtControl.style.backgroundColor = "red";
     } else {
         TxtControl.style.backgroundColor = "grey";
     }
 }
 
-TxtControl.addEventListener(VerifNbrChamps());
-
+VerifNbrChamps();
 
 //Function pour valider emails
 

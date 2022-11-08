@@ -8,10 +8,6 @@ function editNav() {
     }
 }
 
-function VerifNbrChamps() {
-    
-}
-
 // launch modal form
 function launchModal() {
     modalbg.style.display = "block";
@@ -20,13 +16,22 @@ function launchModal() {
 //Form Validation
 let btnSubmit = document.querySelector('.btn-submit');
 btnSubmit.addEventListener('click', ()=>{
-    alert("Ok");
+    
 })
 
 //Verifier si le nombre de champs est correct
-let TxtControl = document.querySelectorAll('.text-control');
+const TxtControl = document.querySelectorAll('.text-control');
+console.log(TxtControl);
 
+function VerifNbrChamps() {
+    if (TxtControl.value.length <= 3) {
+        TxtControl.style.backgroundColor = "red";
+    } else {
+        TxtControl.style.backgroundColor = "grey";
+    }
+}
 
+TxtControl.addEventListener(VerifNbrChamps());
 
 
 //Function pour valider emails

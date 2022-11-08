@@ -8,63 +8,36 @@ function editNav() {
     }
 }
 
+function VerifNbrChamps() {
+    if (TxtControl.value.length <= 2 ) {
+        TxtControl.borderColor = "red";
+    }else{
+        TxtControl.borderColor = "grey";
+    }
+}
+
 // launch modal form
 function launchModal() {
     modalbg.style.display = "block";
 }
 
 //Form Validation
-let btn = document.getElementsByClassName('btn-submit')[0];
-console.log(btn);
-
-
-//Verifier si le nombre de champs est correct
-let PlaceTxt = document.querySelector('.text-control');
-console.log(PlaceTxt);
-let FirstName = document.querySelector('#first');
-let LastName = document.querySelector('#last');
-let Email = document.querySelector('#email');
-let NotifRefus = document.createElement('p');
-document.querySelector('#first').prepend(NotifRefus);
-
-function ValidationPrenom() {
-    //alert('Merci');
-    if (FirstName.value.length <= 2 || FirstName.value == '') {
-        PlaceTxt.style.borderColor = 'red';
-        NotifRefus.textContent = "Veuillez entrer un prénom valide";
-    } else {
-        PlaceTxt.style.borderColor = 'grey';
-    }
-}
-
-function red() {
-    if (formData.value.length <= 2) {
-        
-    }
-}
-
-btn.addEventListener('click', () => {
-    ValidationPrenom();
+let btnSubmit = document.querySelector('.btn-submit');
+btnSubmit.addEventListener('click', ()=>{
+    alert("Ok");
 })
 
-//Function pour valider emails
-const validateEmail = () => {
-    if (String(Email).toLowerCase().match( /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ==false){
+//Verifier si le nombre de champs est correct
+let TxtControl = document.querySelectorAll('.text-control');
+console.log(TxtControl);
 
-    }
-};
+
+
+//Function pour valider emails
 
 
 
 //Agir avec l'envoi du formulaire
-let Fomulaire = document.querySelector('form');
-
-function FormValidation(e) {
-    e.preventDefault();
-}
-
-
-Fomulaire.addEventListener('submit', FormValidation);
 
 
 

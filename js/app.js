@@ -9,11 +9,7 @@ function editNav() {
 }
 
 function VerifNbrChamps() {
-    if (TxtControl.value.length <= 2 ) {
-        TxtControl.borderColor = "red";
-    }else{
-        TxtControl.borderColor = "grey";
-    }
+    
 }
 
 // launch modal form
@@ -29,7 +25,7 @@ btnSubmit.addEventListener('click', ()=>{
 
 //Verifier si le nombre de champs est correct
 let TxtControl = document.querySelectorAll('.text-control');
-console.log(TxtControl);
+
 
 
 

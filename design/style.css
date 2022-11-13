@@ -23,6 +23,10 @@ body {
     margin: 0 auto;
 }
 
+.error{
+    color: red;
+}
+
 p {
     margin-bottom: 0;
     padding: 0.5vw;

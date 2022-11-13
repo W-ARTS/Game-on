@@ -53,7 +53,6 @@ const isValidEmail = email => {
 }
 
 //Validation du formulaire
-//
 const validateInputs = () => {
     const firstnameValue = firstname.value.trim();
     const lastnameValue = lastname.value.trim();

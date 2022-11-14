@@ -89,11 +89,14 @@ const validateInputs = () => {
 
 
 //Message de validation
-const btnSubmit = document.getElementsByClassName('btn_submit')[0];
-let b = document.body;
+const btnSubmit = document.getElementsByClassName('btn-submit')[0];
 let formDel = form.remove();
 
-btnSubmit.addEventListener('click', formDel);
+btnSubmit.addEventListener('click', () => {
+    if (validate()) {
+        formDel;
+    }
+});
 
 
 

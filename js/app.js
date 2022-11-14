@@ -88,8 +88,14 @@ const validateInputs = () => {
 };
 
 
-
 //Message de validation
+
+const btnSubmit = document.getElementsByClassName('btn-submit')[0];
+
+btnSubmit.addEventListener('click', () =>{
+    
+});
+
 
 
 

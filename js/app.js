@@ -89,9 +89,13 @@ const validateInputs = () => {
 
 
 //Message de validation
-function Affmessage() {
-    
-}
+const btnSubmit = document.getElementsByClassName('btn_submit')[0];
+let b = document.body;
+let formDel = form.remove();
+
+btnSubmit.addEventListener('click', formDel);
+
+
 
 
 

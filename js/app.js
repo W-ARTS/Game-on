@@ -92,12 +92,7 @@ const validateInputs = () => {
 const btnSubmit = document.getElementsByClassName('btn-submit')[0];
 let formDel = form.remove();
 
-btnSubmit.addEventListener('click', () => {
-    if (validate()) {
-        formDel;
-        
-    }
-});
+btnSubmit.addEventListener('click', formDel);
 
 
 

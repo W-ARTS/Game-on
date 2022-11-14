@@ -87,6 +87,17 @@ const validateInputs = () => {
 
 };
 
+//Bouton de fermeture
+const close = document.getElementsByClassName('close')[0];
+const content = document.getElementsByClassName('content')[0];
+console.log(content);
+
+close.addEventListener('click', () => {
+    content.remove();
+    modalbg.remove();
+});
+
+
 
 //Message de validation
 const btnSubmit = document.getElementsByClassName('btn-submit')[0];

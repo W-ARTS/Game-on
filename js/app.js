@@ -61,7 +61,7 @@ const validateInputs = () => {
     if (firstnameValue === '') {
         setError(firstname, 'Veuillez entrer votre prenom !');
         firstname.style.borderColor = 'red';
-    }else{
+    }else {
         setSuccess(firstname);
         firstname.style.borderColor = 'grey';
     }

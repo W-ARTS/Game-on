@@ -95,6 +95,7 @@ let formDel = form.remove();
 btnSubmit.addEventListener('click', () => {
     if (validate()) {
         formDel;
+        
     }
 });
 

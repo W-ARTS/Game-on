@@ -90,9 +90,17 @@ const validateInputs = () => {
 
 //Message de validation
 const btnSubmit = document.getElementsByClassName('btn-submit')[0];
-let formDel = form.remove();
+const validationMessage = document.getElementsByClassName('validationMessage')[0];
 
-btnSubmit.addEventListener('click', formDel);
+
+btnSubmit.addEventListener('click', () => {
+    let formDel = form.remove();
+    validationMessage.innerText = "Votre message est bien pris en compte !";
+    validationMessage.style.padding = '22%';
+    validationMessage.style.fontSize = '174%';
+
+    
+} );
 
 
 

@@ -110,7 +110,7 @@ const emailValue = email.value.trim();
     btnSubmit.addEventListener('click', validate);
 
 function validate() {
-    if (firstnameValue && lastnameValue && emailValue === setSuccess) {
+    if (firstnameValue && lastnameValue && emailValue === '') {
         ValidationMess();
     }
 }

@@ -56,64 +56,61 @@ const isValidEmail = email => {
 
 //Validation du formulaire
 
-const validateInputs = () => {
-    const firstnameValue = firstname.value.trim();
-    const lastnameValue = lastname.value.trim();
-    const emailValue = email.value.trim();
+    const validateInputs = () => {
+        const firstnameValue = firstname.value.trim();
+        const lastnameValue = lastname.value.trim();
+        const emailValue = email.value.trim();
 
-    if (firstnameValue === '') {
-        setError(firstname, 'Veuillez entrer votre prenom !');
-        firstname.style.borderColor = 'red';
-    } else {
-        setSuccess(firstname);
-        firstname.style.borderColor = 'grey';
-    }
+        if (firstnameValue === '') {
+            setError(firstname, 'Veuillez entrer votre prenom !');
+            firstname.style.borderColor = 'red';
+        } else {
+            setSuccess(firstname);
+            firstname.style.borderColor = 'grey';
+        }
 
-    if (lastnameValue === '') {
-        setError(lastname, 'Veuillez entrer votre nom !');
-        lastname.style.borderColor = 'red';
-    } else {
-        setSuccess(lastname);
-        lastname.style.borderColor = 'grey';
-    }
+        if (lastnameValue === '') {
+            setError(lastname, 'Veuillez entrer votre nom !');
+            lastname.style.borderColor = 'red';
+        } else {
+            setSuccess(lastname);
+            lastname.style.borderColor = 'grey';
+        }
 
-    if (emailValue === '') {
-        setError(email, 'Une adresse email est obligatoire !');
-        email.style.borderColor = 'red';
-    } else if (!isValidEmail(emailValue)) {
-        setError(email, 'Veuillez entrer un email valide !');
-        email.style.borderColor = 'red';
-    } else {
-        setSuccess(email);
-        email.style.borderColor = 'grey';
-    }
+        if (emailValue === '') {
+            setError(email, 'Une adresse email est obligatoire !');
+            email.style.borderColor = 'red';
+        } else if (!isValidEmail(emailValue)) {
+            setError(email, 'Veuillez entrer un email valide !');
+            email.style.borderColor = 'red';
+        } else {
+            setSuccess(email);
+            email.style.borderColor = 'grey';
+        }
 
-};
+    };
 
-//Bouton de fermeture
-const close = document.getElementsByClassName('close')[0];
-const content = document.getElementsByClassName('content')[0];
-console.log(content);
+    //Bouton de fermeture
+    const close = document.getElementsByClassName('close')[0];
+    const content = document.getElementsByClassName('content')[0];
+    console.log(content);
 
-close.addEventListener('click', () => {
-    content.remove();
-    modalbg.remove();
-});
-
-
-//Message de validation
-const btnSubmit = document.getElementsByClassName('btn-submit')[0];
-const validationMessage = document.getElementsByClassName('validationMessage')[0];
+    close.addEventListener('click', () => {
+        content.remove();
+        modalbg.remove();
+    });
 
 
-btnSubmit.addEventListener('click', vladDracul);
+    //Message de validation
+    const btnSubmit = document.getElementsByClassName('btn-submit')[0];
+    const validationMessage = document.getElementsByClassName('validationMessage')[0];
 
 
-function vladDracul() {
-    if (setSuccess) {
-        validMessage();
-    }
-}
+    btnSubmit.addEventListener('click', () =>{
+        if (validateInputs === setSuccess) {
+            validMessage();
+        }
+    });
 
 
 

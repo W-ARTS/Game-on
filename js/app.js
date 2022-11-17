@@ -55,6 +55,7 @@ const isValidEmail = email => {
 }
 
 //Validation du formulaire
+
 const validateInputs = () => {
     const firstnameValue = firstname.value.trim();
     const lastnameValue = lastname.value.trim();
@@ -63,7 +64,7 @@ const validateInputs = () => {
     if (firstnameValue === '') {
         setError(firstname, 'Veuillez entrer votre prenom !');
         firstname.style.borderColor = 'red';
-    }else {
+    } else {
         setSuccess(firstname);
         firstname.style.borderColor = 'grey';
     }
@@ -79,10 +80,10 @@ const validateInputs = () => {
     if (emailValue === '') {
         setError(email, 'Une adresse email est obligatoire !');
         email.style.borderColor = 'red';
-    }else if (!isValidEmail(emailValue)) {
+    } else if (!isValidEmail(emailValue)) {
         setError(email, 'Veuillez entrer un email valide !');
         email.style.borderColor = 'red';
-    }else {
+    } else {
         setSuccess(email);
         email.style.borderColor = 'grey';
     }
@@ -105,12 +106,19 @@ const btnSubmit = document.getElementsByClassName('btn-submit')[0];
 const validationMessage = document.getElementsByClassName('validationMessage')[0];
 
 
-btnSubmit.addEventListener('click', validMessage);
+btnSubmit.addEventListener('click', vladDracul);
+
+
+function vladDracul() {
+    if (setSuccess) {
+        validMessage();
+    }
+}
 
 
 
 function validMessage() {
-    if (validateInputs === true) {
+    
         let formDel = form.remove();
         validationMessage.innerText = "Votre inscription est bien pris en compte !";
         validationMessage.style.padding = '22%';
@@ -120,7 +128,7 @@ function validMessage() {
         content.style.margin = 'auto';
         modalBody.style.marginTop = '116px';
         modalBody.style.marginBottom = '116px';
-    }
+    
 };
 
 

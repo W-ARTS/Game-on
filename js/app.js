@@ -96,7 +96,7 @@ close.addEventListener('click', () => {
     content.remove();
     modalbg.remove();
 });
-
+//
 
 
 //Message de validation

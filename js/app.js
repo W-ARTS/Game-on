@@ -22,7 +22,7 @@ const modalBody = document.getElementsByClassName('modal-body')[0];
 console.log(modalBody);
 
 //pour bloquer le formulaire
-form.addEventListener('submit', e =>{
+form.addEventListener('submit', e => {
     e.preventDefault();
 
     validateInputs();
@@ -56,11 +56,12 @@ const isValidEmail = email => {
 
 //Validation du formulaire
 
-    const validateInputs = () => {
-        const firstnameValue = firstname.value.trim();
-        const lastnameValue = lastname.value.trim();
-        const emailValue = email.value.trim();
+const firstnameValue = firstname.value.trim();
+const lastnameValue = lastname.value.trim();
+const emailValue = email.value.trim();
 
+    const validateInputs = () => {
+        
         if (firstnameValue === '') {
             setError(firstname, 'Veuillez entrer votre prenom !');
             firstname.style.borderColor = 'red';
@@ -106,15 +107,15 @@ const isValidEmail = email => {
     const validationMessage = document.getElementsByClassName('validationMessage')[0];
 
 
-    btnSubmit.addEventListener('click', () =>{
-        if (setSuccess === true) {
-            validMessage();
-        }
-    });
+    btnSubmit.addEventListener('click', validate);
 
+function validate() {
+    if (firstnameValue && lastnameValue && emailValue === setSuccess) {
+        ValidationMess();
+    }
+}
 
-
-function validMessage() {
+function ValidationMess() {
     
         let formDel = form.remove();
         validationMessage.innerText = "Votre inscription est bien pris en compte !";

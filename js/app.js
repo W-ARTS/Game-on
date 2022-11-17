@@ -18,6 +18,8 @@ const form = document.getElementById('form');
 const firstname = document.getElementById('first');
 const lastname = document.getElementById('last');
 const email = document.getElementById('email');
+const modalBody = document.getElementsByClassName('modal-body')[0];
+console.log(modalBody);
 
 //pour bloquer le formulaire
 form.addEventListener('submit', e =>{
@@ -105,11 +107,14 @@ const validationMessage = document.getElementsByClassName('validationMessage')[0
 
 btnSubmit.addEventListener('click', () => {
     let formDel = form.remove();
-    validationMessage.innerText = "Votre message est bien pris en compte !";
+    validationMessage.innerText = "Votre inscription est bien pris en compte !";
     validationMessage.style.padding = '22%';
     validationMessage.style.fontSize = '174%';
+    validationMessage.style.textAlign = 'center';
     content.style.maxWidth = 'none';
     content.style.margin = 'auto';
+    modalBody.style.marginTop = '116px';
+    modalBody.style.marginBottom = '116px';
 } );
 
 

@@ -60,8 +60,8 @@ const firstnameValue = firstname.value.trim();
 const lastnameValue = lastname.value.trim();
 const emailValue = email.value.trim();
 
-    const validateInputs = () => {
-        
+function validateInputs() {
+
         if (firstnameValue === '') {
             setError(firstname, 'Veuillez entrer votre prenom !');
             firstname.style.borderColor = 'red';
@@ -91,6 +91,8 @@ const emailValue = email.value.trim();
 
     };
 
+
+
     //Bouton de fermeture
     const close = document.getElementsByClassName('close')[0];
     const content = document.getElementsByClassName('content')[0];
@@ -110,7 +112,7 @@ const emailValue = email.value.trim();
     btnSubmit.addEventListener('click', validate);
 
 function validate() {
-    if (firstnameValue && lastnameValue && emailValue === '') {
+    if (firstnameValue && lastnameValue && emailValue === setSuccess) {
         ValidationMess();
     }
 }

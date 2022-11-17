@@ -19,8 +19,8 @@ const firstname = document.getElementById('first');
 const lastname = document.getElementById('last');
 const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
+const quantity = document.getElementById('quantity');
 const modalBody = document.getElementsByClassName('modal-body')[0];
-console.log(modalBody);
 
 //pour bloquer le formulaire
 form.addEventListener('submit', e => {
@@ -57,55 +57,56 @@ const isValidEmail = email => {
 
 //Validation du formulaire
 
-const firstnameValue = firstname.value.trim();
-const lastnameValue = lastname.value.trim();
-const emailValue = email.value.trim();
-const birthValue = birthdate.value.trim();
-
 function validateInputs() {
 
-        if (firstnameValue === '') {
-            setError(firstname, 'Veuillez entrer votre prenom !');
-            firstname.style.borderColor = 'red';
-        } else {
-            setSuccess(firstname);
-            firstname.style.borderColor = 'grey';
-        }
+    const firstnameValue = firstname.value.trim();
+    const lastnameValue = lastname.value.trim();
+    const emailValue = email.value.trim();
+    const birthValue = birthdate.value.trim();
+    const quantityValue = quantity.value.trim();
 
-        if (lastnameValue === '') {
-            setError(lastname, 'Veuillez entrer votre nom !');
-            lastname.style.borderColor = 'red';
-        } else {
-            setSuccess(lastname);
-            lastname.style.borderColor = 'grey';
-        }
+    if (firstnameValue === '') {
+        setError(firstname, 'Veuillez entrer votre prenom !');
+        firstname.style.borderColor = 'red';
+    } else {
+        setSuccess(firstname);
+        firstname.style.borderColor = 'grey';
+    }
 
-        if (emailValue === '') {
-            setError(email, 'Une adresse email est obligatoire !');
-            email.style.borderColor = 'red';
-        } else if (!isValidEmail(emailValue)) {
-            setError(email, 'Veuillez entrer un email valide !');
-            email.style.borderColor = 'red';
-        } else {
-            setSuccess(email);
-            email.style.borderColor = 'grey';
-        }
+    if (lastnameValue === '') {
+        setError(lastname, 'Veuillez entrer votre nom !');
+        lastname.style.borderColor = 'red';
+    } else {
+        setSuccess(lastname);
+        lastname.style.borderColor = 'grey';
+    }
 
-        if (birthValue === '') {
-            setError(birthdate, 'Veuillez entrer votre date de naissance !');
-            if (birthValue === '') {
-                setError(birthdate, 'Veuillez entrer votre date de naissance !');
-                birthdate.style.borderColor = 'red';
-            } else {
-                setSuccess(birthdate);
-                lastname.style.borderColor = 'grey';
-            } birthdate.style.borderColor = 'red';
-        } else {
-            setSuccess(birthdate);
-            birthdate.style.borderColor = 'grey';
-        }
-        
+    if (emailValue === '') {
+        setError(email, 'Une adresse email est obligatoire !');
+        email.style.borderColor = 'red';
+    } else if (!isValidEmail(emailValue)) {
+        setError(email, 'Veuillez entrer un email valide !');
+        email.style.borderColor = 'red';
+    } else {
+        setSuccess(email);
+        email.style.borderColor = 'grey';
+    }
 
+    if (birthValue === '') {
+        setError(birthdate, 'Veuillez entrer votre date de naissance !');
+        birthdate.style.borderColor = 'red';
+    } else {
+        setSuccess(birthdate);
+        birthdate.style.borderColor = 'grey';
+    }
+
+    if (quantityValue === '') {
+        setError(quantity, 'Veuillez choisir une reponse !');
+        quantity.style.borderColor = 'red';
+    } else {
+        setSuccess(quantity);
+        quantity.style.borderColor = 'grey';
+    } 
     };
 
 
@@ -126,26 +127,26 @@ function validateInputs() {
     const validationMessage = document.getElementsByClassName('validationMessage')[0];
 
 
-    btnSubmit.addEventListener('click', validate());
+btnSubmit.addEventListener('click', validate);
 
 function validate() {
-    if (validateInputs === '') {
+    if (validateInputs === true) {
         ValidationMess();
     }
 }
 
 function ValidationMess() {
-    
-        let formDel = form.remove();
-        validationMessage.innerText = "Votre inscription est bien pris en compte !";
-        validationMessage.style.padding = '22%';
-        validationMessage.style.fontSize = '168%';
-        validationMessage.style.textAlign = 'center';
-        content.style.maxWidth = 'none';
-        content.style.margin = 'auto';
-        modalBody.style.marginTop = '116px';
-        modalBody.style.marginBottom = '116px';
-    
+
+    let formDel = form.remove();
+    validationMessage.innerText = "Votre inscription est bien pris en compte !";
+    validationMessage.style.padding = '22%';
+    validationMessage.style.fontSize = '168%';
+    validationMessage.style.textAlign = 'center';
+    content.style.maxWidth = 'none';
+    content.style.margin = 'auto';
+    modalBody.style.marginTop = '116px';
+    modalBody.style.marginBottom = '116px';
+
 };
 
 

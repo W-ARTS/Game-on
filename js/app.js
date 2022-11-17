@@ -108,6 +108,8 @@ btnSubmit.addEventListener('click', () => {
     validationMessage.innerText = "Votre message est bien pris en compte !";
     validationMessage.style.padding = '22%';
     validationMessage.style.fontSize = '174%';
+    content.style.maxWidth = 'none';
+    content.style.margin = 'auto';
 } );
 
 

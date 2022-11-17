@@ -19,7 +19,6 @@ const firstname = document.getElementById('first');
 const lastname = document.getElementById('last');
 const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
-const quantity = document.getElementById('quantity');
 const modalBody = document.getElementsByClassName('modal-body')[0];
 
 //pour bloquer le formulaire
@@ -63,7 +62,6 @@ function validateInputs() {
     const lastnameValue = lastname.value.trim();
     const emailValue = email.value.trim();
     const birthValue = birthdate.value.trim();
-    const quantityValue = quantity.value.trim();
 
     if (firstnameValue === '') {
         setError(firstname, 'Veuillez entrer votre prenom !');
@@ -100,13 +98,6 @@ function validateInputs() {
         birthdate.style.borderColor = 'grey';
     }
 
-    if (quantityValue === '') {
-        setError(quantity, 'Veuillez choisir une reponse !');
-        quantity.style.borderColor = 'red';
-    } else {
-        setSuccess(quantity);
-        quantity.style.borderColor = 'grey';
-    } 
     };
 
 
@@ -130,7 +121,7 @@ function validateInputs() {
 btnSubmit.addEventListener('click', validate);
 
 function validate() {
-    if (validateInputs === true) {
+    if (validateInputs ) {
         ValidationMess();
     }
 }

@@ -107,7 +107,7 @@ const isValidEmail = email => {
 
 
     btnSubmit.addEventListener('click', () =>{
-        if (validateInputs === setSuccess) {
+        if (setSuccess === true) {
             validMessage();
         }
     });

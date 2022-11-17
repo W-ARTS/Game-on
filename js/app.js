@@ -105,17 +105,23 @@ const btnSubmit = document.getElementsByClassName('btn-submit')[0];
 const validationMessage = document.getElementsByClassName('validationMessage')[0];
 
 
-btnSubmit.addEventListener('click', () => {
-    let formDel = form.remove();
-    validationMessage.innerText = "Votre inscription est bien pris en compte !";
-    validationMessage.style.padding = '22%';
-    validationMessage.style.fontSize = '174%';
-    validationMessage.style.textAlign = 'center';
-    content.style.maxWidth = 'none';
-    content.style.margin = 'auto';
-    modalBody.style.marginTop = '116px';
-    modalBody.style.marginBottom = '116px';
-} );
+btnSubmit.addEventListener('click', validMessage);
+
+
+
+function validMessage() {
+    if (validateInputs === true) {
+        let formDel = form.remove();
+        validationMessage.innerText = "Votre inscription est bien pris en compte !";
+        validationMessage.style.padding = '22%';
+        validationMessage.style.fontSize = '168%';
+        validationMessage.style.textAlign = 'center';
+        content.style.maxWidth = 'none';
+        content.style.margin = 'auto';
+        modalBody.style.marginTop = '116px';
+        modalBody.style.marginBottom = '116px';
+    }
+};
 
 
 // DOM Elements

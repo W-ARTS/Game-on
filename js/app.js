@@ -109,10 +109,10 @@ function validateInputs() {
     const validationMessage = document.getElementsByClassName('validationMessage')[0];
 
 
-    btnSubmit.addEventListener('click', validate);
+    btnSubmit.addEventListener('click', validate());
 
 function validate() {
-    if (firstnameValue && lastnameValue && emailValue === setSuccess) {
+    if (validateInputs === true) {
         ValidationMess();
     }
 }

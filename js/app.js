@@ -18,6 +18,7 @@ const form = document.getElementById('form');
 const firstname = document.getElementById('first');
 const lastname = document.getElementById('last');
 const email = document.getElementById('email');
+const birthdate = document.getElementById('birthdate');
 const modalBody = document.getElementsByClassName('modal-body')[0];
 console.log(modalBody);
 
@@ -59,6 +60,7 @@ const isValidEmail = email => {
 const firstnameValue = firstname.value.trim();
 const lastnameValue = lastname.value.trim();
 const emailValue = email.value.trim();
+const birthValue = birthdate.value.trim();
 
 function validateInputs() {
 
@@ -89,6 +91,21 @@ function validateInputs() {
             email.style.borderColor = 'grey';
         }
 
+        if (birthValue === '') {
+            setError(birthdate, 'Veuillez entrer votre date de naissance !');
+            if (birthValue === '') {
+                setError(birthdate, 'Veuillez entrer votre date de naissance !');
+                birthdate.style.borderColor = 'red';
+            } else {
+                setSuccess(birthdate);
+                lastname.style.borderColor = 'grey';
+            } birthdate.style.borderColor = 'red';
+        } else {
+            setSuccess(birthdate);
+            birthdate.style.borderColor = 'grey';
+        }
+        
+
     };
 
 
@@ -112,7 +129,7 @@ function validateInputs() {
     btnSubmit.addEventListener('click', validate());
 
 function validate() {
-    if (validateInputs === true) {
+    if (validateInputs === '') {
         ValidationMess();
     }
 }

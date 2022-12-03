@@ -20,6 +20,7 @@ const lastname = document.getElementById('last');
 const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
 const modalBody = document.getElementsByClassName('modal-body')[0];
+const checkbox = document.getElementsByClassName('checkbox-label')[0];
 
 //pour bloquer le formulaire
 form.addEventListener('submit', e => {

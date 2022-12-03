@@ -107,23 +107,21 @@ function validateInputs() {
 
     };
 
-
-
-    //Bouton de fermeture
+//Bouton de fermeture
     const close = document.getElementsByClassName('close')[0];
     const content = document.getElementsByClassName('bground')[0];
 
     close.addEventListener('click', () => {
-        modalbg.style.display = "none";
-    });
+    modalbg.style.display = "none";
+});
 
 
 //Message de validation
-const btnSubmit = document.getElementsByClassName('btn-submit')[0];
-const validationMessage = document.getElementsByClassName('validationMessage')[0];
+    const btnSubmit = document.getElementsByClassName('btn-submit')[0];
+    const validationMessage = document.getElementsByClassName('validationMessage')[0];
 
 
-btnSubmit.addEventListener('click', validate);
+    btnSubmit.addEventListener('click', validate);
 
 function validate() {
     if (validateInputs()) {

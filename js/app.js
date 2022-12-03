@@ -106,8 +106,8 @@ function validateInputs() {
         birthdate.style.borderColor = 'grey';
     }
 
-    if (quantityValue >=0 || quantityValue <=99) {
-        innerHTML='Veullez choisir un chiffre';
+    if (quantityValue === '') {
+        setError(quantity, 'Veuillez entrer votre date de naissance');
         quantity.style.borderColor = 'red';
         Isvalid = false;
     } else {

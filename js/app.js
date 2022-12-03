@@ -67,7 +67,7 @@ function validateInputs() {
     let Isvalid = true;
 
     if (firstnameValue === '') {
-        setError(firstname, 'Veuillez entrer votre prenom !');
+        setError(firstname, 'Veuillez entrer votre prenom');
         firstname.style.borderColor = 'red';
         Isvalid = false;
     } else {
@@ -76,7 +76,7 @@ function validateInputs() {
     }
 
     if (lastnameValue === '') {
-        setError(lastname, 'Veuillez entrer votre nom !');
+        setError(lastname, 'Veuillez entrer votre nom');
         lastname.style.borderColor = 'red';
         Isvalid = false;
     } else {
@@ -85,11 +85,11 @@ function validateInputs() {
     }
 
     if (emailValue === '') {
-        setError(email, 'Une adresse email est obligatoire !');
+        setError(email, 'Une adresse email est obligatoire');
         email.style.borderColor = 'red';
         Isvalid = false;
     } else if (!isValidEmail(emailValue)) {
-        setError(email, 'Veuillez entrer un email valide !');
+        setError(email, 'Veuillez entrer un email valide');
         email.style.borderColor = 'red';
         Isvalid = false;
     } else {
@@ -98,7 +98,7 @@ function validateInputs() {
     }
 
     if (birthValue === '') {
-        setError(birthdate, 'Veuillez entrer votre date de naissance !');
+        setError(birthdate, 'Veuillez entrer votre date de naissance');
         birthdate.style.borderColor = 'red';
         Isvalid = false;
     } else {
@@ -106,8 +106,8 @@ function validateInputs() {
         birthdate.style.borderColor = 'grey';
     }
 
-    if (quantityValue === '') {
-        setError(quantity, 'Veuillez entrer votre prenom !');
+    if (quantityValue >=0 || quantityValue <=99) {
+        innerHTML='Veullez choisir un chiffre';
         quantity.style.borderColor = 'red';
         Isvalid = false;
     } else {

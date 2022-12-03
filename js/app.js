@@ -21,6 +21,7 @@ const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
 const modalBody = document.getElementsByClassName('modal-body')[0];
 const quantity = document.getElementById('quantity');
+const checkbox = document.getElementsByClassName('checkbox-input')[0];
 
 //pour bloquer le formulaire
 form.addEventListener('submit', e => {
@@ -64,6 +65,8 @@ function validateInputs() {
     const emailValue = email.value.trim();
     const birthValue = birthdate.value.trim();
     const quantityValue = quantity.value.trim();
+    const checkboxValue = quantity.value.trim();
+    
     let Isvalid = true;
 
     if (firstnameValue === '') {
@@ -107,13 +110,23 @@ function validateInputs() {
     }
 
     if (quantityValue === '') {
-        setError(quantity, 'Veuillez entrer votre date de naissance');
+        setError(quantity, 'Veuillez entrer un chiffre');
         quantity.style.borderColor = 'red';
         Isvalid = false;
     } else {
         setSuccess(quantity);
         quantity.style.borderColor = 'grey';
     }
+
+    if (checkboxValue === '') {
+        setError(checkbox, 'Veuillez choisir une destination');
+        checkbox.style.borderColor = 'red';
+        Isvalid = false;
+    } else {
+        setSuccess(checkbox);
+        checkbox.style.borderColor = 'grey';
+    }
+
 
     return Isvalid;
 

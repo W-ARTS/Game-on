@@ -20,7 +20,7 @@ const lastname = document.getElementById('last');
 const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
 const modalBody = document.getElementsByClassName('modal-body')[0];
-const checkbox = document.getElementsByClassName('checkbox-label')[0];
+const quantity = document.getElementById('quantity');
 
 //pour bloquer le formulaire
 form.addEventListener('submit', e => {
@@ -63,6 +63,7 @@ function validateInputs() {
     const lastnameValue = lastname.value.trim();
     const emailValue = email.value.trim();
     const birthValue = birthdate.value.trim();
+    const quantityValue = quantity.value.trim();
     let Isvalid = true;
 
     if (firstnameValue === '') {
@@ -104,6 +105,16 @@ function validateInputs() {
         setSuccess(birthdate);
         birthdate.style.borderColor = 'grey';
     }
+
+    if (quantityValue === '') {
+        setError(quantity, 'Veuillez entrer votre prenom !');
+        quantity.style.borderColor = 'red';
+        Isvalid = false;
+    } else {
+        setSuccess(quantity);
+        quantity.style.borderColor = 'grey';
+    }
+
     return Isvalid;
 
     };

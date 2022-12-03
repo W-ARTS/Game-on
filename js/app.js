@@ -62,10 +62,12 @@ function validateInputs() {
     const lastnameValue = lastname.value.trim();
     const emailValue = email.value.trim();
     const birthValue = birthdate.value.trim();
+    let Isvalid = true;
 
     if (firstnameValue === '') {
         setError(firstname, 'Veuillez entrer votre prenom !');
         firstname.style.borderColor = 'red';
+        Isvalid = false;
     } else {
         setSuccess(firstname);
         firstname.style.borderColor = 'grey';
@@ -74,6 +76,7 @@ function validateInputs() {
     if (lastnameValue === '') {
         setError(lastname, 'Veuillez entrer votre nom !');
         lastname.style.borderColor = 'red';
+        Isvalid = false;
     } else {
         setSuccess(lastname);
         lastname.style.borderColor = 'grey';
@@ -82,9 +85,11 @@ function validateInputs() {
     if (emailValue === '') {
         setError(email, 'Une adresse email est obligatoire !');
         email.style.borderColor = 'red';
+        Isvalid = false;
     } else if (!isValidEmail(emailValue)) {
         setError(email, 'Veuillez entrer un email valide !');
         email.style.borderColor = 'red';
+        Isvalid = false;
     } else {
         setSuccess(email);
         email.style.borderColor = 'grey';
@@ -93,10 +98,12 @@ function validateInputs() {
     if (birthValue === '') {
         setError(birthdate, 'Veuillez entrer votre date de naissance !');
         birthdate.style.borderColor = 'red';
+        Isvalid = false;
     } else {
         setSuccess(birthdate);
         birthdate.style.borderColor = 'grey';
     }
+    return Isvalid;
 
     };
 
@@ -104,12 +111,10 @@ function validateInputs() {
 
     //Bouton de fermeture
     const close = document.getElementsByClassName('close')[0];
-    const content = document.getElementsByClassName('content')[0];
-    console.log(content);
+    const content = document.getElementsByClassName('bground')[0];
 
     close.addEventListener('click', () => {
-        content.remove();
-        modalbg.remove();
+        modalbg.style.display = "none";
     });
 
 
@@ -121,11 +126,12 @@ const validationMessage = document.getElementsByClassName('validationMessage')[0
 btnSubmit.addEventListener('click', validate);
 
 function validate() {
-    if (validateInputs ) {
+    if (validateInputs()) {
         ValidationMess();
     }
 }
 
+//Design du Message de validation
 function ValidationMess() {
 
     let formDel = form.remove();

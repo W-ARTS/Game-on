@@ -22,6 +22,12 @@ const birthdate = document.getElementById('birthdate');
 const modalBody = document.getElementsByClassName('modal-body')[0];
 const quantity = document.getElementById('quantity');
 const checkbox = document.getElementsByClassName('checkbox-input')[0];
+const checkbox2 = document.getElementsByClassName('checkbox-input')[1];
+const checkbox3 = document.getElementsByClassName('checkbox-input')[2];
+const checkbox4 = document.getElementsByClassName('checkbox-input')[3];
+const checkbox5 = document.getElementsByClassName('checkbox-input')[4];
+const checkbox6 = document.getElementsByClassName('checkbox-input')[5];
+console.log(checkbox);
 
 //pour bloquer le formulaire
 form.addEventListener('submit', e => {
@@ -65,7 +71,7 @@ function validateInputs() {
     const emailValue = email.value.trim();
     const birthValue = birthdate.value.trim();
     const quantityValue = quantity.value.trim();
-    const checkboxValue = quantity.value.trim();
+    const checkboxValue = checkbox.value.trim();
     
     let Isvalid = true;
 
@@ -118,13 +124,16 @@ function validateInputs() {
         quantity.style.borderColor = 'grey';
     }
 
-    if (checkboxValue === '') {
+
+
+    if (checkbox.checked || checkbox2.checked || checkbox3.checked || checkbox4.checked || checkbox.checked5  || checkbox6.checked === false) {
         setError(checkbox, 'Veuillez choisir une destination');
         checkbox.style.borderColor = 'red';
         Isvalid = false;
     } else {
         setSuccess(checkbox);
         checkbox.style.borderColor = 'grey';
+        return true;
     }
 
 

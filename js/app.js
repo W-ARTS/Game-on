@@ -124,18 +124,14 @@ function validateInputs() {
         quantity.style.borderColor = 'grey';
     }
 
-
-
-    if (checkbox.checked || checkbox2.checked || checkbox3.checked || checkbox4.checked || checkbox.checked5  || checkbox6.checked === false) {
+    if (checkbox.checked === false && checkbox2.checked === false && checkbox3.checked === false && checkbox4.checked === false && checkbox5.checked === false && checkbox6.checked === false) {
         setError(checkbox, 'Veuillez choisir une destination');
         checkbox.style.borderColor = 'red';
         Isvalid = false;
     } else {
         setSuccess(checkbox);
         checkbox.style.borderColor = 'grey';
-        return true;
     }
-
 
     return Isvalid;
 

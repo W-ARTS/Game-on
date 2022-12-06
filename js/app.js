@@ -126,8 +126,6 @@ function validateInputs() {
 
     if (checkbox.checked === false && checkbox2.checked === false && checkbox3.checked === false && checkbox4.checked === false && checkbox5.checked === false && checkbox6.checked === false) {
         setError(checkbox, 'Veuillez choisir une destination');
-        checkbox.style.borderColor = 'red';
-        checkbox.style.fontColor = 'white';
         Isvalid = false;
     } else {
         setSuccess(checkbox);
@@ -136,7 +134,6 @@ function validateInputs() {
 
     if (ValidationInput.checked === false) {
         setError(ValidationInput, 'Veuillez accepter les conditions');
-        ValidationInput.style.borderColor = 'red';
         Isvalid = false;
     } else {
         setSuccess(ValidationInput);

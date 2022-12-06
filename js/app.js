@@ -27,7 +27,7 @@ const checkbox3 = document.getElementsByClassName('checkbox-input')[2];
 const checkbox4 = document.getElementsByClassName('checkbox-input')[3];
 const checkbox5 = document.getElementsByClassName('checkbox-input')[4];
 const checkbox6 = document.getElementsByClassName('checkbox-input')[5];
-console.log(checkbox);
+const ValidationInput = document.getElementById('checkbox1');
 
 //pour bloquer le formulaire
 form.addEventListener('submit', e => {
@@ -127,10 +127,20 @@ function validateInputs() {
     if (checkbox.checked === false && checkbox2.checked === false && checkbox3.checked === false && checkbox4.checked === false && checkbox5.checked === false && checkbox6.checked === false) {
         setError(checkbox, 'Veuillez choisir une destination');
         checkbox.style.borderColor = 'red';
+        checkbox.style.fontColor = 'white';
         Isvalid = false;
     } else {
         setSuccess(checkbox);
         checkbox.style.borderColor = 'grey';
+    }
+
+    if (ValidationInput.checked === false) {
+        setError(ValidationInput, 'Veuillez accepter les conditions');
+        ValidationInput.style.borderColor = 'red';
+        Isvalid = false;
+    } else {
+        setSuccess(ValidationInput);
+        ValidationInput.style.borderColor = 'grey';
     }
 
     return Isvalid;

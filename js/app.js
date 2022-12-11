@@ -167,6 +167,8 @@ function validate() {
 }
 
 //Design du Message de validation
+
+const btnEnd = document.getElementsByClassName('btn-end')[0];
 function ValidationMess() {
 
     let formDel = form.remove();
@@ -178,7 +180,7 @@ function ValidationMess() {
     content.style.margin = 'auto';
     modalBody.style.marginTop = '116px';
     modalBody.style.marginBottom = '116px';
-
+    btnEnd.style.display = 'flex';
 };
 
 

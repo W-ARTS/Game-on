@@ -168,7 +168,7 @@ main {
 }
 
 .btn-end{
-    display: none!important;
+    visibility: hidden;
     background: #fe142f;
     display: block;
     margin: 0 auto;

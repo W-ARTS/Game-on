@@ -180,7 +180,11 @@ function ValidationMess() {
     content.style.margin = 'auto';
     modalBody.style.marginTop = '116px';
     modalBody.style.marginBottom = '116px';
-    btnEnd.style.display = 'flex';
+    btnEnd.style.visibility = 'visible';
+
+    btnEnd.addEventListener('click', () => {
+        modalbg.style.display = "none";
+    });
 };
 
 
